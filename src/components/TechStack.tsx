@@ -1,4 +1,5 @@
 import { Code2, Database, Wrench } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const techCategories = [
   {
@@ -19,9 +20,11 @@ const techCategories = [
 ];
 
 const TechStack = () => {
+  const { ref, isVisible } = useScrollAnimation(0.1);
+
   return (
-    <section className="py-32 px-6 relative">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-32 px-6 relative" ref={ref}>
+      <div className={`max-w-6xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground tracking-tight">
             Tech Stack
@@ -38,7 +41,8 @@ const TechStack = () => {
             return (
               <div
                 key={index}
-                className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-3xl p-8 hover:border-primary/40 hover:shadow-elevated hover:shadow-primary/10 transition-all duration-500 group hover:-translate-y-1"
+                className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-3xl p-8 hover:border-primary/40 hover:shadow-elevated hover:shadow-primary/10 transition-all duration-500 group hover:-translate-y-2"
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
                   <Icon className="w-7 h-7 text-primary" />

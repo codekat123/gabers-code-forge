@@ -1,5 +1,6 @@
 import { ExternalLink, Github, Monitor } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const projects = [
   {
@@ -33,9 +34,11 @@ const projects = [
 ];
 
 const Projects = () => {
+  const { ref, isVisible } = useScrollAnimation(0.1);
+
   return (
-    <section id="projects" className="py-32 px-6 relative">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" className="py-32 px-6 relative" ref={ref}>
+      <div className={`max-w-7xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground tracking-tight">
             Featured Projects
@@ -50,8 +53,8 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-3xl p-8 hover:border-primary/40 hover:shadow-elevated hover:shadow-primary/10 transition-all duration-500 group hover:-translate-y-2 animate-fade-in"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-3xl p-8 hover:border-primary/40 hover:shadow-elevated hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-3"
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <h3 className="text-2xl md:text-3xl font-bold mb-5 text-foreground group-hover:text-primary transition-colors duration-300">
                 {project.title}
@@ -65,7 +68,7 @@ const Projects = () => {
                 {project.tech.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="px-4 py-2 text-sm font-medium bg-primary/10 text-primary rounded-xl border border-primary/20 hover:bg-primary/20 hover:scale-105 transition-all duration-200 cursor-default"
+                    className="px-4 py-2 text-sm font-medium bg-primary/10 text-primary rounded-xl border border-primary/20 hover:bg-primary/20 hover:scale-110 hover:shadow-lg hover:shadow-primary/20 transition-all duration-200 cursor-default"
                   >
                     {tech}
                   </span>
@@ -76,11 +79,12 @@ const Projects = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-primary/20 rounded-xl font-medium"
+                  className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/30 rounded-xl font-medium relative overflow-hidden group"
                 >
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="relative z-10">
                     <Github className="w-4 h-4 mr-2" />
                     View Code
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                   </a>
                 </Button>
                 
@@ -88,7 +92,7 @@ const Projects = () => {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="flex-1 border-2 border-primary/30 text-foreground hover:bg-primary/10 hover:border-primary hover:scale-105 transition-all duration-300 rounded-xl font-medium"
+                  className="flex-1 border-2 border-primary/30 text-foreground hover:bg-primary/10 hover:border-primary hover:scale-110 hover:shadow-lg transition-all duration-300 rounded-xl font-medium"
                 >
                   <a href={project.demo} target="_blank" rel="noopener noreferrer">
                     <Monitor className="w-4 h-4 mr-2" />
