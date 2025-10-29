@@ -20,14 +20,17 @@ const techCategories = [
 
 const TechStack = () => {
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-background to-card/30">
+    <section className="py-32 px-6 relative">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-foreground">
-          Tech Stack
-        </h2>
-        <p className="text-center text-muted-foreground mb-12">
-          Technologies and tools I work with to build modern web applications
-        </p>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground tracking-tight">
+            Tech Stack
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-4"></div>
+          <p className="text-lg text-muted-foreground">
+            Technologies and tools I work with to build modern web applications
+          </p>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {techCategories.map((category, index) => {
@@ -35,20 +38,20 @@ const TechStack = () => {
             return (
               <div
                 key={index}
-                className="bg-card/50 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all group"
+                className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-3xl p-8 hover:border-primary/40 hover:shadow-elevated hover:shadow-primary/10 transition-all duration-500 group hover:-translate-y-1"
               >
-                <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                  <Icon className="w-6 h-6 text-primary" />
+                <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                  <Icon className="w-7 h-7 text-primary" />
                 </div>
                 
-                <h3 className="text-xl font-semibold mb-3 text-foreground">
+                <h3 className="text-2xl font-semibold mb-4 text-foreground">
                   {category.title}
                 </h3>
                 
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {category.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="text-muted-foreground text-sm flex items-start">
-                      <span className="text-primary mr-2">•</span>
+                    <li key={itemIndex} className="text-muted-foreground text-base flex items-start">
+                      <span className="text-primary mr-3 font-bold">•</span>
                       {item}
                     </li>
                   ))}

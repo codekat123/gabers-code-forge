@@ -9,52 +9,65 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
-      {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-card -z-10" />
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 -left-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      </div>
       
-      <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/50 border border-border backdrop-blur-sm">
-          <MapPin className="w-4 h-4 text-primary" />
-          <span className="text-sm text-muted-foreground">Egypt</span>
+      <div className="max-w-5xl mx-auto text-center relative z-10">
+        <div className="mb-8 animate-fade-up">
+          <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20 mb-6">
+            Available for Freelance
+          </span>
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground">
+        <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-fade-in tracking-tight">
           Ahmed Gaber
         </h1>
         
-        <p className="text-xl md:text-2xl text-muted-foreground font-medium">
+        <h2 className="text-2xl md:text-4xl text-foreground/90 mb-8 animate-fade-in font-light" style={{ animationDelay: '200ms' }}>
           Backend Developer
-        </p>
+        </h2>
         
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-in" style={{ animationDelay: '400ms' }}>
           Building robust backend systems and APIs with Django and Python. Specialized in clean architecture, testable code, and predictable deployments.
         </p>
         
-        <div className="flex items-center justify-center gap-4 pt-4">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in" style={{ animationDelay: '600ms' }}>
           <Button 
-            size="lg"
+            size="lg" 
             onClick={() => scrollToSection('projects')}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-primary/20 transition-all"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 py-7 rounded-xl shadow-lg hover:shadow-primary/20 hover:scale-105 transition-all duration-300 font-medium"
           >
             View Projects
           </Button>
-          
           <Button 
+            size="lg" 
             variant="outline"
-            size="lg"
             onClick={() => scrollToSection('contact')}
-            className="border-border hover:bg-card hover:border-primary transition-all"
+            className="border-2 border-primary/30 text-foreground hover:bg-primary/10 hover:border-primary text-lg px-10 py-7 rounded-xl hover:scale-105 transition-all duration-300 font-medium"
           >
             Get in Touch
           </Button>
         </div>
 
-        <div className="flex items-center justify-center gap-6 pt-4">
-          <a href="https://github.com/codekat123" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
-            <Github className="w-6 h-6" />
+        <div className="flex gap-8 justify-center animate-fade-in" style={{ animationDelay: '800ms' }}>
+          <a
+            href="https://github.com/codekat123"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
+          >
+            <Github className="w-7 h-7" />
           </a>
-          <a href="https://www.linkedin.com/in/ahmed-gaber-509b88359" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
-            <Linkedin className="w-6 h-6" />
+          <a
+            href="https://www.linkedin.com/in/ahmed-gaber-509b88359"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
+          >
+            <Linkedin className="w-7 h-7" />
           </a>
         </div>
       </div>
