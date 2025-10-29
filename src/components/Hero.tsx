@@ -2,6 +2,11 @@ import { MapPin, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
       {/* Gradient background */}
@@ -13,44 +18,44 @@ const Hero = () => {
           <span className="text-sm text-muted-foreground">Egypt</span>
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-          <span className="bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-            Ahmed Gaber
-          </span>
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground">
+          Ahmed Gaber
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground font-medium">
-          Web Developer | Backend & Full Stack Developer
+          Backend Developer
         </p>
         
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          Building robust backend systems and APIs with Django and Laravel. 
-          Passionate about clean code, performance, and creating solutions that matter.
+          Building robust backend systems and APIs with Django and Python. Specialized in clean architecture, testable code, and predictable deployments.
         </p>
         
         <div className="flex items-center justify-center gap-4 pt-4">
           <Button 
-            asChild
             size="lg"
+            onClick={() => scrollToSection('projects')}
             className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-primary/20 transition-all"
           >
-            <a href="https://github.com/codekat123" target="_blank" rel="noopener noreferrer">
-              <Github className="w-5 h-5 mr-2" />
-              GitHub
-            </a>
+            View Projects
           </Button>
           
           <Button 
-            asChild
             variant="outline"
             size="lg"
+            onClick={() => scrollToSection('contact')}
             className="border-border hover:bg-card hover:border-primary transition-all"
           >
-            <a href="https://www.linkedin.com/in/ahmed-gaber-509b88359" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="w-5 h-5 mr-2" />
-              LinkedIn
-            </a>
+            Get in Touch
           </Button>
+        </div>
+
+        <div className="flex items-center justify-center gap-6 pt-4">
+          <a href="https://github.com/codekat123" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
+            <Github className="w-6 h-6" />
+          </a>
+          <a href="https://www.linkedin.com/in/ahmed-gaber-509b88359" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
+            <Linkedin className="w-6 h-6" />
+          </a>
         </div>
       </div>
     </section>

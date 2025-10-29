@@ -1,25 +1,20 @@
-import { Code2, Database, Layout, GitBranch } from "lucide-react";
+import { Code2, Database, Wrench } from "lucide-react";
 
 const techCategories = [
   {
     icon: Code2,
     title: "Backend",
-    items: ["Python (Django)"],
-  },
-  {
-    icon: Layout,
-    title: "Frontend",
-    items: ["HTML", "CSS", "JavaScript"],
+    items: ["Python (Django)", "RESTful APIs", "JWT Authentication", "Celery"],
   },
   {
     icon: Database,
     title: "Database",
-    items: ["PostgreSQL", "MySQL"],
+    items: ["PostgreSQL", "MySQL", "SQL"],
   },
   {
-    icon: GitBranch,
+    icon: Wrench,
     title: "Tools",
-    items: ["Git", "GitHub", "Postman", "Railway", "VS Code"],
+    items: ["Git", "GitHub", "Docker", "Linux", "Postman", "VS Code"],
   },
 ];
 
@@ -27,13 +22,14 @@ const TechStack = () => {
   return (
     <section className="py-20 px-6 bg-gradient-to-b from-background to-card/30">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          <span className="bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-            Tech Stack
-          </span>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-foreground">
+          Tech Stack
         </h2>
+        <p className="text-center text-muted-foreground mb-12">
+          Technologies and tools I work with to build modern web applications
+        </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {techCategories.map((category, index) => {
             const Icon = category.icon;
             return (
@@ -51,7 +47,8 @@ const TechStack = () => {
                 
                 <ul className="space-y-2">
                   {category.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="text-muted-foreground text-sm">
+                    <li key={itemIndex} className="text-muted-foreground text-sm flex items-start">
+                      <span className="text-primary mr-2">•</span>
                       {item}
                     </li>
                   ))}
