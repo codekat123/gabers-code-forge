@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Monitor } from "lucide-react";
+import { Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
@@ -7,36 +7,31 @@ const projects = [
     title: "Modular E-commerce REST API",
     description: "RESTful APIs for products, categories, cart, orders, coupons, referrals, and user profiles. JWT auth with OTP signup, email verification, Redis-backed cart with caching and throttling, Celery for background jobs, merchant dashboard with analytics, personalized recommendations, and AI chat assistant.",
     tech: ["Django 5", "DRF", "PostgreSQL", "Redis", "Celery", "JWT"],
-    github: "https://github.com/codekat123/E-commerce-api",
-    demo: "https://www.linkedin.com/posts/ahmed-gaber-509b88359_backend-ecommerce-python-activity-7351706784039927808-3WhC",
+    github: "https://github.com/codekat123/E-commerce",
   },
   {
     title: "CareMate - Healthcare Platform",
     description: "Healthcare platform with appointments, patient profiles, doctor dashboards, AI assistant, and real-time chat. Features email verification, JWT auth, appointment scheduling, doctor reporting, AI assistant via Google Generative AI, and Swagger/Redoc documentation.",
     tech: ["Django 5", "DRF", "Channels", "Celery", "Redis", "AI API"],
     github: "https://github.com/codekat123/care-mate",
-    demo: "https://www.linkedin.com/posts/ahmed-gaber-509b88359_recently-completed-the-development-of-caremate-activity-7379501433680986112-OGfe",
   },
   {
     title: "WhatsApp Clone (Real-Time Chat)",
     description: "Real-time messaging app with private chats, groups, read receipts, and admin features. Built with Django Channels and WebSockets for live messaging, OTP signup, and JWT authentication.",
     tech: ["Django", "DRF", "Channels", "WebSockets", "PostgreSQL", "Docker"],
-    github: "https://github.com/codekat123/social_media_application",
-    demo: "https://www.linkedin.com/posts/ahmed-gaber-509b88359_webdevelopment-python-sideproject-activity-7370822046609465365-SECq",
+    github: "https://github.com/codekat123/WhatsApp-clone",
   },
   {
     title: "Khamsat-Style Freelance Marketplace",
     description: "Freelancer marketplace backend with services, orders, payments, wallet system with signals, ratings, and live chat. Full order lifecycle, real-time chat with Channels, scheduled tasks with Celery Beat, and API docs via drf-spectacular.",
     tech: ["Django 5.2", "DRF", "Channels", "Celery", "Redis", "PostgreSQL"],
-    github: "https://github.com/codekat123/library_system",
-    demo: "https://www.linkedin.com/posts/ahmed-gaber-509b88359_hey-everyone-i-just-finished-working-activity-7347612955414323200-u6Hj",
+    github: "https://github.com/codekat123/clone-khamsat",
   },
   {
     title: "Coursera-like Backend Platform",
     description: "Learning platform backend with users, courses, modules, quizzes, enrollments, and PayPal payments. Custom user model for Students/Instructors, modular course system, JWT auth, PayPal order create/capture, Redis caching, and Celery workers.",
     tech: ["Django 5", "DRF", "PostgreSQL", "Redis", "Celery", "PayPal SDK"],
-    github: "https://github.com/codekat123",
-    demo: "https://github.com/codekat123",
+    github: "https://github.com/codekat123/Coursera_clone",
   },
 ];
 
@@ -82,31 +77,17 @@ const Projects = () => {
                 ))}
               </div>
               
-              <div className="flex gap-4">
-                <Button
-                  asChild
-                  size="lg"
-                  className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/30 rounded-xl font-medium relative overflow-hidden group"
-                >
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="relative z-10">
-                    <Github className="w-4 h-4 mr-2" />
-                    View Code
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-                  </a>
-                </Button>
-                
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="flex-1 border-2 border-primary/30 text-foreground hover:bg-primary/10 hover:border-primary hover:scale-110 hover:shadow-lg transition-all duration-300 rounded-xl font-medium"
-                >
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                    <Monitor className="w-4 h-4 mr-2" />
-                    Demo
-                  </a>
-                </Button>
-              </div>
+              <Button
+                asChild
+                size="lg"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/30 rounded-xl font-medium relative overflow-hidden group"
+              >
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="relative z-10">
+                  <Github className="w-4 h-4 mr-2" />
+                  View Code
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                </a>
+              </Button>
             </div>
           ))}
         </div>
