@@ -1,10 +1,10 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-
 const About = () => {
-  const { ref, isVisible } = useScrollAnimation(0.1);
-
-  return (
-    <section className="py-32 px-6 relative" ref={ref}>
+  const {
+    ref,
+    isVisible
+  } = useScrollAnimation(0.1);
+  return <section className="py-32 px-6 relative" ref={ref}>
       <div className={`max-w-5xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground tracking-tight">
@@ -30,26 +30,11 @@ const About = () => {
             <span className="text-primary font-semibold">Docker</span> for containerization.
           </p>
           
-          <div className="mt-10 pt-8 border-t border-border/50">
-            <h3 className="text-2xl font-semibold mb-5 text-foreground">Experience</h3>
-            <div className="mb-4">
-              <h4 className="text-lg font-semibold text-foreground">Team Member – DIGITOPIA (AI & Software Competition)</h4>
-              <p className="text-sm text-primary mb-2">MCIT – Ministry of Communications & Information Technology</p>
-              <p className="text-muted-foreground leading-relaxed">
-                Collaborated with cross-functional team members in a competitive tech environment. Demonstrated teamwork, adaptability, and effective communication while working under pressure to meet deadlines.
-              </p>
-            </div>
-          </div>
           
-          <div className="mt-8 pt-8 border-t border-border/50">
-            <h3 className="text-2xl font-semibold mb-5 text-foreground">Education</h3>
-            <p className="text-lg text-foreground">Bachelor's in Management Information Systems</p>
-            <p className="text-muted-foreground">Mansoura Higher Institute</p>
-          </div>
+          
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
