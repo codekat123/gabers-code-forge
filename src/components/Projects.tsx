@@ -4,32 +4,39 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const projects = [
   {
-    title: "E-commerce API",
-    description: "Django REST Framework backend with product, order, and payment flows. Background workers for email and invoice generation.",
-    tech: ["Django", "REST API", "PostgreSQL", "JWT"],
+    title: "Modular E-commerce REST API",
+    description: "Full-featured e-commerce backend with products, cart, orders, coupons, referrals, and user profiles. JWT auth with OTP signup, Redis-backed cart with caching and throttling, Celery for background jobs, merchant dashboard with analytics, personalized recommendations, and AI chat assistant.",
+    tech: ["Django 5", "DRF", "PostgreSQL", "Redis", "Celery", "JWT"],
     github: "https://github.com/codekat123/E-commerce-api",
     demo: "https://www.linkedin.com/posts/ahmed-gaber-509b88359_backend-ecommerce-python-activity-7351706784039927808-3WhC",
   },
   {
-    title: "Care-Mate",
-    description: "A healthcare management platform that connects patients with doctors, allowing appointment scheduling, medical record tracking, and secure communication.",
-    tech: ["Django", "Healthcare", "REST API"],
+    title: "CareMate - Healthcare Platform",
+    description: "Healthcare platform with appointments, patient profiles, doctor dashboards, AI assistant, and real-time chat. Features email verification, JWT auth, appointment scheduling, doctor reporting, and Google Generative AI integration.",
+    tech: ["Django 5", "DRF", "Channels", "Celery", "Redis", "AI API"],
     github: "https://github.com/codekat123/care-mate",
     demo: "https://www.linkedin.com/posts/ahmed-gaber-509b88359_recently-completed-the-development-of-caremate-activity-7379501433680986112-OGfe",
   },
   {
-    title: "Social Media App",
-    description: "A social networking platform that lets users share posts, follow others, and interact through likes and comments.",
-    tech: ["Django", "Python", "Social Media"],
+    title: "WhatsApp Clone (Real-Time Chat)",
+    description: "Real-time messaging application with private chats, groups, read receipts, and admin features. Built with Django Channels and WebSockets for live messaging, OTP signup, and JWT authentication.",
+    tech: ["Django", "DRF", "Channels", "WebSockets", "PostgreSQL", "Docker"],
     github: "https://github.com/codekat123/social_media_application",
     demo: "https://www.linkedin.com/posts/ahmed-gaber-509b88359_webdevelopment-python-sideproject-activity-7370822046609465365-SECq",
   },
   {
-    title: "Library System",
-    description: "A book management dashboard for tracking sales, rentals, and profits. Features interactive charts, category filtering, and detailed book analytics.",
-    tech: ["Django", "Dashboard", "Analytics"],
+    title: "Khamsat-Style Freelance Marketplace",
+    description: "Freelancer marketplace backend with services, orders, payments, wallet system with signals, ratings, and live chat. Full order lifecycle, real-time chat with Channels, scheduled tasks with Celery Beat, and API documentation.",
+    tech: ["Django 5.2", "DRF", "Channels", "Celery", "Redis", "PostgreSQL"],
     github: "https://github.com/codekat123/library_system",
     demo: "https://www.linkedin.com/posts/ahmed-gaber-509b88359_hey-everyone-i-just-finished-working-activity-7347612955414323200-u6Hj",
+  },
+  {
+    title: "Coursera-like Backend Platform",
+    description: "Learning platform backend with users, courses, modules, quizzes, enrollments, and PayPal payments. Custom user model for Students/Instructors, modular course system, JWT auth, PayPal integration, Redis caching, and Celery workers.",
+    tech: ["Django 5", "DRF", "PostgreSQL", "Redis", "Celery", "PayPal SDK"],
+    github: "https://github.com/codekat123",
+    demo: "https://github.com/codekat123",
   },
 ];
 

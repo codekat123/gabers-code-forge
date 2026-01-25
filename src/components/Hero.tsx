@@ -44,11 +44,11 @@ const Hero = () => {
         </h1>
         
         <h2 className={`text-2xl md:text-4xl text-foreground/90 mb-8 font-light transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '400ms' }}>
-          Backend Developer
+          Backend Developer <span className="text-primary">(Python | Django | DRF)</span>
         </h2>
         
         <p className={`text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '600ms' }}>
-          Building robust backend systems and APIs with Django and Python. Specialized in clean architecture, testable code, and predictable deployments.
+          Specializing in building RESTful APIs, authentication systems, real-time features with WebSockets, and asynchronous task processing. Strong understanding of relational databases and clean backend architecture.
         </p>
         
         <div className={`flex flex-col sm:flex-row gap-4 justify-center mb-16 transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '800ms' }}>

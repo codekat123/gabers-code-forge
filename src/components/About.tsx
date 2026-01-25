@@ -15,25 +15,36 @@ const About = () => {
         
         <div className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-3xl p-10 md:p-12 shadow-elevated hover:shadow-primary/10 hover:border-primary/30 transition-all duration-500 group hover:-translate-y-1">
           <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8">
-            I build backend services that developers and businesses rely on. I focus on{' '}
-            <span className="text-primary font-semibold">clean architecture</span>,{' '}
-            <span className="text-primary font-semibold">testable code</span>, and{' '}
-            <span className="text-primary font-semibold">predictable deployments</span>.
+            Backend developer specializing in{' '}
+            <span className="text-primary font-semibold">Python</span>,{' '}
+            <span className="text-primary font-semibold">Django</span>, and{' '}
+            <span className="text-primary font-semibold">Django REST Framework</span>.
+            Experienced in building RESTful APIs, authentication systems, asynchronous tasks, caching, and real-time features.
           </p>
           
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10">
-            Specialized in building scalable backend systems and APIs using{' '}
-            <span className="text-primary font-semibold">Django</span> and{' '}
-            <span className="text-primary font-semibold">Python</span>, with experience in 
-            RESTful APIs, authentication (JWT), database management (PostgreSQL, MySQL), and asynchronous task 
-            processing with Celery.
+            Strong understanding of relational databases and clean backend architecture. Proficient with{' '}
+            <span className="text-primary font-semibold">Django Channels (WebSockets)</span>,{' '}
+            <span className="text-primary font-semibold">Celery & Redis</span> for async tasks and caching,{' '}
+            <span className="text-primary font-semibold">JWT Authentication</span>, and{' '}
+            <span className="text-primary font-semibold">Docker</span> for containerization.
           </p>
           
           <div className="mt-10 pt-8 border-t border-border/50">
-            <h3 className="text-2xl font-semibold mb-5 text-foreground">Learning Goals</h3>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Currently learning advanced backend concepts, microservices architecture, and performance optimization to become a professional Backend Developer.
-            </p>
+            <h3 className="text-2xl font-semibold mb-5 text-foreground">Experience</h3>
+            <div className="mb-4">
+              <h4 className="text-lg font-semibold text-foreground">Team Member – DIGITOPIA (AI & Software Competition)</h4>
+              <p className="text-sm text-primary mb-2">MCIT – Ministry of Communications & Information Technology</p>
+              <p className="text-muted-foreground leading-relaxed">
+                Collaborated with cross-functional team members in a competitive tech environment. Demonstrated teamwork, adaptability, and effective communication while working under pressure to meet deadlines.
+              </p>
+            </div>
+          </div>
+          
+          <div className="mt-8 pt-8 border-t border-border/50">
+            <h3 className="text-2xl font-semibold mb-5 text-foreground">Education</h3>
+            <p className="text-lg text-foreground">Bachelor's in Management Information Systems</p>
+            <p className="text-muted-foreground">Mansoura Higher Institute</p>
           </div>
         </div>
       </div>
