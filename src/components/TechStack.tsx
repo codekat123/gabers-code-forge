@@ -1,21 +1,35 @@
-import { Code2, Database, Wrench } from "lucide-react";
+import { Code2, Database, Wrench, Zap } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const techCategories = [
   {
     icon: Code2,
-    title: "Backend",
-    items: ["Python (Django)", "RESTful APIs", "JWT Authentication", "Celery"],
+    title: "Backend & Core",
+    items: [
+      "Django 5",
+      "Django REST Framework",
+      "JWT Authentication (SimpleJWT)",
+      "Django Channels (WebSockets)",
+      "Celery & Redis (async tasks, caching)",
+      "RESTful API Design",
+      "Clean Architecture & Modular Apps",
+      "Unit Testing",
+    ],
   },
   {
     icon: Database,
-    title: "Database",
-    items: ["PostgreSQL", "MySQL", "SQL"],
+    title: "Databases",
+    items: ["PostgreSQL", "MySQL", "SQLite", "Redis", "MongoDB"],
   },
   {
     icon: Wrench,
-    title: "Tools",
-    items: ["Git", "GitHub", "Docker", "Linux", "Postman", "VS Code"],
+    title: "Tools & DevOps",
+    items: ["Docker", "Git & GitHub", "Postman", "Linux", "Swagger / OpenAPI"],
+  },
+  {
+    icon: Zap,
+    title: "Programming",
+    items: ["Python", "C", "HTML", "CSS"],
   },
 ];
 
