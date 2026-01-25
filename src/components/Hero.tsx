@@ -1,4 +1,4 @@
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import profilePhoto from "@/assets/profile-photo.jpeg";
@@ -67,6 +67,17 @@ const Hero = () => {
             className="border-2 border-primary/30 text-foreground hover:bg-primary/10 hover:border-primary text-lg px-10 py-7 rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-300 font-medium"
           >
             Get in Touch
+          </Button>
+          <Button 
+            size="lg" 
+            variant="outline"
+            asChild
+            className="border-2 border-primary/30 text-foreground hover:bg-primary/10 hover:border-primary text-lg px-10 py-7 rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-300 font-medium"
+          >
+            <a href={`${import.meta.env.BASE_URL}Ahmed_Gaber_Backend_Developer.pdf`} download>
+              <Download className="w-5 h-5 mr-2" />
+              Download CV
+            </a>
           </Button>
         </div>
 
