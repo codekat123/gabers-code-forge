@@ -1,37 +1,67 @@
-import { Github } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const projects = [
   {
-    title: "Modular E-commerce REST API",
-    description: "RESTful APIs for products, categories, cart, orders, coupons, referrals, and user profiles. JWT auth with OTP signup, email verification, Redis-backed cart with caching and throttling, Celery for background jobs, merchant dashboard with analytics, personalized recommendations, and AI chat assistant.",
+    title: "E-commerce REST API",
+    description: "Complete backend for an online marketplace with products, cart, orders, coupons, and merchant analytics.",
     tech: ["Django 5", "DRF", "PostgreSQL", "Redis", "Celery", "JWT"],
+    built: [
+      "RESTful APIs for products, categories, cart, orders, and coupons",
+      "JWT authentication with OTP signup and email verification",
+      "Redis-backed cart with caching and rate limiting",
+      "Celery for background jobs (emails, order processing)",
+      "Merchant dashboard with sales analytics",
+      "AI-powered product recommendations"
+    ],
+    matters: "Production-ready architecture handling real e-commerce flows: user auth, inventory, payments, and async processing.",
     github: "https://github.com/codekat123/E-commerce",
   },
   {
     title: "CareMate - Healthcare Platform",
-    description: "Healthcare platform with appointments, patient profiles, doctor dashboards, AI assistant, and real-time chat. Features email verification, JWT auth, appointment scheduling, doctor reporting, AI assistant via Google Generative AI, and Swagger/Redoc documentation.",
+    description: "Healthcare system with appointments, patient/doctor dashboards, and real-time communication.",
     tech: ["Django 5", "DRF", "Channels", "Celery", "Redis", "AI API"],
+    built: [
+      "Patient profiles and doctor dashboards",
+      "Appointment scheduling with availability management",
+      "Real-time chat between patients and doctors",
+      "AI assistant via Google Generative AI",
+      "Email verification and JWT authentication",
+      "Swagger/Redoc API documentation"
+    ],
+    matters: "Demonstrates handling of sensitive data, scheduling systems, and real-time features in a healthcare context.",
     github: "https://github.com/codekat123/care-mate",
   },
   {
-    title: "WhatsApp Clone (Real-Time Chat)",
-    description: "Real-time messaging app with private chats, groups, read receipts, and admin features. Built with Django Channels and WebSockets for live messaging, OTP signup, and JWT authentication.",
+    title: "Real-Time Chat Application",
+    description: "WhatsApp-style messaging with private chats, groups, and read receipts.",
     tech: ["Django", "DRF", "Channels", "WebSockets", "PostgreSQL", "Docker"],
+    built: [
+      "Real-time messaging with Django Channels and WebSockets",
+      "Private chats and group conversations",
+      "Read receipts and typing indicators",
+      "OTP signup with JWT authentication",
+      "Admin features for group management",
+      "Dockerized for deployment"
+    ],
+    matters: "WebSocket implementation at scale—handling persistent connections, message delivery, and presence features.",
     github: "https://github.com/codekat123/WhatsApp-clone",
   },
   {
-    title: "Khamsat-Style Freelance Marketplace",
-    description: "Freelancer marketplace backend with services, orders, payments, wallet system with signals, ratings, and live chat. Full order lifecycle, real-time chat with Channels, scheduled tasks with Celery Beat, and API docs via drf-spectacular.",
+    title: "Freelance Marketplace Backend",
+    description: "Khamsat-style platform with services, orders, wallet system, and live chat.",
     tech: ["Django 5.2", "DRF", "Channels", "Celery", "Redis", "PostgreSQL"],
+    built: [
+      "Service listings with categories and search",
+      "Full order lifecycle with status tracking",
+      "Wallet system with signals for transactions",
+      "Ratings and reviews for completed orders",
+      "Real-time chat between buyers and sellers",
+      "Scheduled tasks with Celery Beat"
+    ],
+    matters: "Complex business logic: multi-party transactions, escrow-style payments, and automated workflows.",
     github: "https://github.com/codekat123/clone-khamsat",
-  },
-  {
-    title: "Coursera-like Backend Platform",
-    description: "Learning platform backend with users, courses, modules, quizzes, enrollments, and PayPal payments. Custom user model for Students/Instructors, modular course system, JWT auth, PayPal order create/capture, Redis caching, and Celery workers.",
-    tech: ["Django 5", "DRF", "PostgreSQL", "Redis", "Celery", "PayPal SDK"],
-    github: "https://github.com/codekat123/Coursera_clone",
   },
 ];
 
@@ -39,56 +69,74 @@ const Projects = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
-    <section id="projects" className="py-32 px-6 relative" ref={ref}>
-      <div className={`max-w-7xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground tracking-tight">
-            Featured Projects
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-4"></div>
-          <p className="text-lg text-muted-foreground">
-            Showcase of my work in backend development and full-stack applications
-          </p>
-        </div>
+    <section id="projects" className="section-spacing border-t border-border" ref={ref}>
+      <div className={`section-container transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        <h2 className="text-sm font-medium text-primary uppercase tracking-wide mb-4">
+          Projects
+        </h2>
+        <p className="text-2xl md:text-3xl font-semibold text-foreground mb-12 max-w-2xl">
+          Backend systems built for real-world use cases
+        </p>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="space-y-16">
           {projects.map((project, index) => (
-            <div
+            <article
               key={index}
-              className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-3xl p-8 hover:border-primary/40 hover:shadow-elevated hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-3"
-              style={{ transitionDelay: `${index * 100}ms` }}
+              className="border-l-2 border-border pl-6 md:pl-8 hover:border-primary transition-colors duration-300"
             >
-              <h3 className="text-2xl md:text-3xl font-bold mb-5 text-foreground group-hover:text-primary transition-colors duration-300">
+              <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2">
                 {project.title}
               </h3>
               
-              <p className="text-muted-foreground mb-7 leading-relaxed text-base">
+              <p className="text-muted-foreground mb-4">
                 {project.description}
               </p>
               
-              <div className="flex flex-wrap gap-2 mb-8">
+              <div className="flex flex-wrap gap-2 mb-6">
                 {project.tech.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="px-4 py-2 text-sm font-medium bg-primary/10 text-primary rounded-xl border border-primary/20 hover:bg-primary/20 hover:scale-110 hover:shadow-lg hover:shadow-primary/20 transition-all duration-200 cursor-default"
+                    className="px-3 py-1 text-sm font-medium bg-secondary text-secondary-foreground rounded-md"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
               
+              <div className="mb-6">
+                <h4 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3">
+                  What I Built
+                </h4>
+                <ul className="grid md:grid-cols-2 gap-2">
+                  {project.built.map((item, itemIndex) => (
+                    <li key={itemIndex} className="text-muted-foreground text-sm flex items-start">
+                      <span className="text-primary mr-2 mt-1">•</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div className="mb-6">
+                <h4 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-2">
+                  Why It Matters
+                </h4>
+                <p className="text-muted-foreground text-sm">
+                  {project.matters}
+                </p>
+              </div>
+              
               <Button
                 asChild
-                size="lg"
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/30 rounded-xl font-medium relative overflow-hidden group"
+                variant="outline"
+                className="border-border text-foreground hover:bg-secondary hover:border-primary"
               >
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="relative z-10">
+                <a href={project.github} target="_blank" rel="noopener noreferrer">
                   <Github className="w-4 h-4 mr-2" />
-                  View Code
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                  View Source Code
                 </a>
               </Button>
-            </div>
+            </article>
           ))}
         </div>
       </div>
