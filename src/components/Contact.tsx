@@ -92,7 +92,7 @@ const Contact = () => {
             
             <div className="space-y-4">
               <Button asChild size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground justify-start py-6 rounded-xl shadow-lg hover:shadow-primary/20 hover:scale-105 transition-all duration-300 font-medium">
-                <a href="mailto:ahmed.gaber4371@gmail.com">
+                <a href="mailto:ahmed.gaber.dev@gmail.com">
                   <Mail className="w-5 h-5 mr-3" />
                   Email Me
                 </a>
