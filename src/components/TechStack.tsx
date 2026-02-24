@@ -11,9 +11,7 @@ const techCategories = [
       "JWT Authentication (SimpleJWT)",
       "Django Channels (WebSockets)",
       "Celery & Redis (async tasks, caching)",
-      "RESTful API Design",
-      "Clean Architecture & Modular Apps",
-      "Unit Testing",
+      "RESTful API",
     ],
   },
   {
@@ -24,12 +22,17 @@ const techCategories = [
   {
     icon: Wrench,
     title: "Tools & DevOps",
-    items: ["Docker", "Git & GitHub", "Postman", "Linux", "Swagger / OpenAPI"],
+    items: ["Docker", "Git & GitHub", "Postman", "Linux", "Swagger / OpenAPI", "Unit Testing", "NGINX", "AWS"],
   },
   {
     icon: Zap,
     title: "Programming",
-    items: ["Python", "C", "HTML", "CSS"],
+    items: ["Python", "C", "OOP", "Design Patterns", "SOLID Principles"],
+  },
+  {
+    icon: Code2,
+    title: "Frontend (Basics)",
+    items: ["HTML", "CSS"],
   },
 ];
 
@@ -49,7 +52,7 @@ const TechStack = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {techCategories.map((category, index) => {
             const Icon = category.icon;
             return (
